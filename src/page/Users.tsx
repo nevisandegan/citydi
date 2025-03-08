@@ -1,26 +1,24 @@
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import { Box, Grid2 as Grid, Stack, Typography } from "@mui/material";
-import CustomTextField from "./core/CustomTextField";
-import Page from "./core/Page";
-import labels from "./lib/labels";
-import FilterSelect from "./components/filter-select";
-import { useState } from "react";
-import { CustomDataGrid } from "./core/CustomDataGrid";
-import SearchIcon from "@mui/icons-material/Search";
-import theme from "./theme/theme";
-import UsersDataGrid from "./components/users-data-grid";
-import { useGetUsersQuery } from "./store/services/users";
 
-function App() {
+import { useState } from "react";
+
+import SearchIcon from "@mui/icons-material/Search";
+import { useGetUsersQuery } from "../store/services/users";
+import labels from "../lib/labels";
+import Page from "../core/Page";
+import CustomTextField from "../core/CustomTextField";
+import theme from "../theme/theme";
+import UsersDataGrid from "../components/users-data-grid";
+
+function Users() {
   const [filterValue, setFilterValue] = useState<string>("");
 
-  const { data } = useGetUsersQuery();
-
-  console.log(data);
+  const { data, isFetching } = useGetUsersQuery();
 
   return (
     <>
-      <Page icon={PeopleAltIcon} title={labels.users}>
+      <Page icon={PeopleAltIcon} title={labels.users_list}>
         <Grid container spacing={4}>
           <Grid size={{ xs: 12, sm: 3 }}>
             <Box
@@ -44,13 +42,13 @@ function App() {
               </Stack>
               <Stack gap={1}>
                 <Box>
-                  <CustomTextField fullWidth placeholder={labels.username} />
+                  <CustomTextField fullWidth placeholder={labels.name} />
                 </Box>
               </Stack>
             </Box>
           </Grid>
           <Grid size={{ xs: 12, sm: 9 }}>
-            <UsersDataGrid />
+            <UsersDataGrid data={data} isFetching={isFetching} />
           </Grid>
         </Grid>
       </Page>
@@ -58,4 +56,4 @@ function App() {
   );
 }
 
-export default App;
+export default Users;

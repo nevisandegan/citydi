@@ -1,14 +1,21 @@
-import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { StrictMode } from "react";
+import { Provider } from "react-redux";
+import { BrowserRouter as Router, Routes } from "react-router-dom"; // مطمئن شو BrowserRouter وارد شده
+import { store } from "./store";
+import { ThemeProvider } from "@mui/material/styles";
+import { routes } from "./routes";
+import theme from "./theme/theme";
 import "./index.css";
-import App from "./App.tsx";
-import { ThemeProvider } from "@mui/material";
-import theme from "./theme/theme.ts";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <Router>
+          <Routes>{routes}</Routes>
+        </Router>
+      </ThemeProvider>
+    </Provider>
   </StrictMode>
 );

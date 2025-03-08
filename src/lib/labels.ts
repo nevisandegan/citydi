@@ -1,7 +1,13 @@
 
 const labels = {
-  welcome: "خوش آمدید",
-  users: "لیست کاربران",
+  users_list: "لیست کاربران",
+  users_search: "جستجو کاربران",
+  name: "نام",
+  favorite_list: "لیست علاقه مندی ها",
+  number: "شماره",
+  created_at: "تاریخ ثبت",
+  image: "تصویر",
+  favorite: "علاقه مندم"
 };
 
 export default labels;

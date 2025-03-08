@@ -34,7 +34,7 @@ const Page = ({ icon, title, children }: Props) => {
           {title}
         </Typography>
       </Stack>
-      <Box sx={{marginTop:5}}>{children}</Box>
+      <Box sx={{ marginTop: 5 }}>{children}</Box>
     </>
   );
 };
