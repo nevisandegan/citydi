@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+import { Box, Grid2 as Grid, Typography } from "@mui/material";
+import CustomInput from "./components/CustomInput";
+import Page from "./components/Page";
+import labels from "./lib/labels";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Page icon={PeopleAltIcon} title={labels.users}>
+        <Grid container spacing={4}>
+          <Grid size={{ xs: 12, sm: 3 }}>
+            <Box sx={{ boxShadow: 1, padding: 2, borderRadius: "8px" }}>
+              <Typography sx={{ mb: 2, fontSize: "1rem" }}>
+                {"جستجوی کاربران"}
+              </Typography>
+              <Box>
+                <CustomInput placeholder="نام کاربر" />
+              </Box>
+            </Box>
+          </Grid>
+          <Grid size={{ xs: 12, sm: 9 }}>eee</Grid>
+        </Grid>
+      </Page>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
