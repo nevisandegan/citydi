@@ -1,10 +1,6 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi } from '@reduxjs/toolkit/query/react';
 import { apiBaseQuery } from '../../../utils/api-base-query';
-
-export interface UserResource {
-    id: number;
-    name: string;
-}
+import { UserResource } from './type';
 
 export const usersApi = createApi({
     reducerPath: 'usersApi',

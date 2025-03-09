@@ -26,8 +26,8 @@ const NotFound: React.FC = () => {
         to="/users"
         variant="contained"
         sx={{
-          backgroundColor: "#3A5A40", // از primary.main
-          "&:hover": { backgroundColor: "#A3B18A" }, // از primary.light
+          backgroundColor: "#3A5A40",
+          "&:hover": { backgroundColor: "#A3B18A" },
         }}
       >
         برو به صفحه کاربران

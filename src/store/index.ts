@@ -1,4 +1,3 @@
-// src/store.ts
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { usersApi } from "./services/users";
 import { setupListeners } from "@reduxjs/toolkit/query";
@@ -13,13 +12,15 @@ import {
 } from "redux-persist";
 import persistReducer from "redux-persist/es/persistReducer";
 import storage from "redux-persist/lib/storage";
-import favoriteReducer from "./slices/favoriteSlice"; // اضافه کردن reducer جدید
+import favoriteReducer from "./slices/favoriteSlice";
+import { favoritesApi } from "./services/faivorites";
 
-const middleware = [usersApi.middleware];
+const middleware = [usersApi.middleware, favoritesApi.middleware];
 
 const reducers = {
     [usersApi.reducerPath]: usersApi.reducer,
-    favorites: favoriteReducer, // اضافه کردن favorites به reducers
+    [favoritesApi.reducerPath]: favoritesApi.reducer,
+    favorites: favoriteReducer,
 };
 
 const combinedReducers = combineReducers(reducers);

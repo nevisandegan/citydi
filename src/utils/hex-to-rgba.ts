@@ -1,7 +1,6 @@
 export const hexToRGBA = (hex: string, alpha: number = 1): string => {
     let r = 0, g = 0, b = 0;
 
-    // بررسی فرمت رنگ و استخراج مقادیر RGB
     if (hex.length === 7) {
         r = parseInt(hex.slice(1, 3), 16);
         g = parseInt(hex.slice(3, 5), 16);

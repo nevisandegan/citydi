@@ -1,6 +1,5 @@
 import { styled, Select, SelectProps } from "@mui/material";
 
-// ثابت‌ها
 const FONT_SIZE = "0.8rem";
 const BORDER_RADIUS = 8;
 const PADDING = "7.5px 7px";

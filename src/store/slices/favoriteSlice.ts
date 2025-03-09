@@ -1,13 +1,12 @@
-// src/redux/favoritesSlice.js
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface Favorite {
+export interface FavoriteType {
     id: string;
     isFavorite: boolean;
 }
 
-interface FavoritesState {
-    favorites: Favorite[];
+export interface FavoritesState {
+    favorites: FavoriteType[];
 }
 
 const initialState: FavoritesState = {
@@ -18,12 +17,12 @@ const favoritesSlice = createSlice({
     name: "favorites",
     initialState,
     reducers: {
-        setFavorite: (state, action: PayloadAction<Favorite>) => {
+        setFavorite: (state, action: PayloadAction<FavoriteType>) => {
             const { id, isFavorite } = action.payload;
-            const existingFavorite = state.favorites.find((fav) => fav.id === id);
 
-            if (existingFavorite) {
-                existingFavorite.isFavorite = isFavorite;
+            if (!isFavorite) {
+                const existingFavorite = state.favorites.filter((fav) => fav.id !== id);
+                state.favorites = existingFavorite;
             } else {
                 state.favorites.push({ id, isFavorite });
             }

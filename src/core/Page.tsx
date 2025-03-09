@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack, SxProps, Theme, Typography } from "@mui/material";
 import { ReactNode } from "react";
 import theme from "../theme/theme";
 
@@ -6,9 +6,10 @@ interface Props {
   icon: React.ElementType;
   title: string;
   children: ReactNode;
+  sx?: SxProps<Theme>;
 }
 
-const Page = ({ icon, title, children }: Props) => {
+const Page = ({ icon, title, children, sx }: Props) => {
   const IconComponent = icon;
 
   return (
@@ -21,6 +22,7 @@ const Page = ({ icon, title, children }: Props) => {
             paddingX: 1.1,
             paddingY: 0.6,
             borderRadius: "100%",
+            ...sx,
           }}
         >
           <IconComponent

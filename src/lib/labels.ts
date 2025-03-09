@@ -7,7 +7,7 @@ const labels = {
   number: "شماره",
   created_at: "تاریخ ثبت",
   image: "تصویر",
-  favorite: "علاقه مندم"
+  favorite: "علاقه مند"
 };
 
 export default labels;

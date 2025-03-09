@@ -1,7 +1,7 @@
 import { createRoot } from "react-dom/client";
 import { StrictMode } from "react";
 import { Provider } from "react-redux";
-import { BrowserRouter as Router, Routes } from "react-router-dom"; // مطمئن شو BrowserRouter وارد شده
+import { BrowserRouter as Router, Routes } from "react-router-dom";
 import { store } from "./store";
 import { ThemeProvider } from "@mui/material/styles";
 import { routes } from "./routes";

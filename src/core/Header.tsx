@@ -1,4 +1,4 @@
-import { Box, Link, Typography } from "@mui/material";
+import { Box, Link } from "@mui/material";
 
 import navItems from "../data/nav-item";
 
@@ -14,8 +14,6 @@ const Header = () => {
         height: "72px",
       }}
     >
-      {/* <SideBarMenu /> */}
-
       {navItems.map((item, index) => (
         <Link
           sx={{
