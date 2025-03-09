@@ -52,7 +52,7 @@ function Users() {
   return (
     <Page icon={PeopleAltIcon} title={labels.users_list}>
       <Grid container spacing={4}>
-        <Grid size={{ xs: 12, sm: 3 }}>
+        <Grid size={{ xs: 12, lg: 3 }}>
           <Box
             sx={{
               boxShadow: 1,
@@ -84,7 +84,7 @@ function Users() {
             </Stack>
           </Box>
         </Grid>
-        <Grid size={{ xs: 12, sm: 9 }}>
+        <Grid size={{ xs: 12, lg: 9 }}>
           <UsersDataGrid data={displayData} isFetching={isFetching} />
         </Grid>
       </Grid>

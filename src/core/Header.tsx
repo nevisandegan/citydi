@@ -17,7 +17,6 @@ const Header = () => {
       {navItems.map((item, index) => (
         <Link
           sx={{
-            display: { xs: "none", sm: "block" },
             textDecorationLine: "none",
             fontSize: "0.8rem",
           }}

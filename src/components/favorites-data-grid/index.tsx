@@ -3,6 +3,7 @@ import { CustomDataGrid } from "../../core/CustomDataGrid";
 import { useMemo } from "react";
 import labels from "../../lib/labels";
 import { UserResource } from "../../store/services/users/type";
+import { Box } from "@mui/material";
 
 interface Props {
   data: UserResource[];

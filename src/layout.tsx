@@ -7,7 +7,17 @@ const Layout: React.FC = () => {
   return (
     <>
       <Header />
-      <Box style={{ padding: "1rem", margin: "2rem 10rem" }}>
+      <Box
+        sx={{
+          padding: "1rem",
+          margin: {
+            xs: "0.2rem",
+            sm: "2rem 5rem",
+            md: "2rem 8rem",
+            lg: "2rem 10rem",
+          },
+        }}
+      >
         <Outlet />
       </Box>
     </>
